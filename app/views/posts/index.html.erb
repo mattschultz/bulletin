@@ -4,14 +4,14 @@
   <form ng-submit="create(newPost)" name="hello">
     <label for="title">Title</label>
     <input type="text" name="title" id="title" ng-model="newPost.title" />
-    <p>{{newPost.title|noVowels}}</p>
+    <p>{{newPost.title|titleize}}</p>
     <label for="body">Body</label>
     <textarea name="body" id="body" ng-model="newPost.body"></textarea>
     <input type="submit" class="btn" />
   </form>
 
   <li ng-repeat="post in posts">
-     <h2>{{post.title}}</h2>
+     <h2>{{post.title|titleize}}</h2>
      <p>{{post.body}}</p>
    </li>
 </div>

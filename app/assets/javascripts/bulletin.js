@@ -18,10 +18,11 @@ bulletinApp.factory('Post', ['$resource', function($resource) {
   return $resource('/posts');
 }]);
 
-bulletinApp.filter('noVowels', function() {
+bulletinApp.filter('titleize', function() {
   return function(text) {
-    if(typeof text !== 'undefined') {
-      return text.replace(/[aeiou]/gi,'')
-    }
+    if (text == null) return '';
+    return String(text).replace(/(?:^|\s)\S/g, function(c) {
+      return c.toUpperCase();
+    });
   }
 });
