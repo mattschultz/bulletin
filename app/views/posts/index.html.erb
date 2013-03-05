@@ -1,7 +1,7 @@
 <div ng-controller="PostsCtrl">
   <h1>{{heading}}</h1>
 
-  <form ng-submit="create(newPost)" name="hello">
+  <form ng-submit="create()" name="hello">
     <label for="title">Title</label>
     <input type="text" name="title" id="title" ng-model="newPost.title" />
     <p>{{newPost.title|titleize}}</p>
